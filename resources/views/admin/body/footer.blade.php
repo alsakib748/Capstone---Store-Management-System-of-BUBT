@@ -5,8 +5,8 @@
                 &copy;
                 <script>
                     document.write(new Date().getFullYear())
-                </script> - Made with <span class="mdi mdi-heart text-danger"></span> by <a href="#!"
-                    class="text-reset fw-semibold">bubtinventory.com</a>
+                </script> - Made with <span class="mdi mdi-heart text-danger"></span> by <a href="https://portfolio.thealsakib.com/" target="_blank"
+                    class="text-reset fw-semibold">bubtstore</a>
             </div>
         </div>
     </div>

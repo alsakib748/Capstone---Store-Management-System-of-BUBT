@@ -37,7 +37,7 @@
                                         <th>Tracking No</th>
                                         <th>Note No</th>
                                         <th>Semester</th>
-                                        <th>Department</th>
+                                        {{-- <th>Department</th> --}}
                                         <th>Grand Total</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -52,7 +52,7 @@
                                             <td>
                                                 {{ $item->semester ? (($item->semester->code ? $item->semester->code . ' : ' : '') . $item->semester->name) : '-' }}
                                             </td>
-                                            <td>{{ $item->department->name ?? '-' }}</td>
+                                            {{-- <td>{{ $item->department->name ?? '-' }}</td> --}}
                                             <td>৳{{ $item->grand_total }}</td>
                                             <td>{{ $item->status }}</td>
                                             <td>

@@ -4,21 +4,16 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
-use App\Models\Customer;
 use App\Models\DamageProduct;
 use App\Models\Department;
 use App\Models\Issue;
 use App\Models\IssueReturn;
 use App\Models\Product;
-use App\Models\ProductCategory;
 use App\Models\Purchase;
 use App\Models\ReturnPurchase;
-use App\Models\Sale;
-use App\Models\SaleReturn;
 use App\Models\Semester;
 use App\Models\Subcategory;
 use App\Models\User;
-use App\Models\WareHouse;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,13 +22,13 @@ class ReportController extends Controller
 {
     public function AllReport()
     {
-        $purchases = Purchase::with(['purchaseItems.product', 'supplier', 'warehouse', 'user'])->get();
+        $purchases = Purchase::with(['purchaseItems.product', 'supplier', 'user'])->get();
         return view('admin.backend.report.all_report', compact('purchases'));
     }
 
     public function PurchaseReport()
     {
-        $purchases = Purchase::with(['purchaseItems.product', 'supplier', 'warehouse', 'semester', 'department', 'user'])->get();
+        $purchases = Purchase::with(['purchaseItems.product', 'supplier', 'semester', 'department', 'user'])->get();
         $semesters = Semester::all();
         $departments = Department::all();
         $subcategories = Subcategory::all();

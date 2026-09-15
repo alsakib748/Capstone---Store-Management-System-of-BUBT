@@ -57,7 +57,7 @@
                     </p>
                 </a>
 
-                
+
             </div>
 
                         <!-- All-->
@@ -72,19 +72,21 @@
     @php
         $id = Auth::user()->id;
         $profileData = App\Models\User::find($id);
-    @endphp            
+    @endphp
 
                 <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <img src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/user_images/1755009448.png') }}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
-                            {{ $profileData->name }} <i class="mdi mdi-chevron-down"></i> 
+                            {{ $profileData->name }} <i class="mdi mdi-chevron-down"></i>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                         <!-- item-->
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome !</h6>
+                            <h6 class="text-overflow m-0">
+                                <a href="https://portfolio.thealsakib.com/" target="_blank" class="text-dark">Welcome !</a>
+                            </h6>
                         </div>
 
                         <!-- item-->
@@ -114,5 +116,5 @@
         </div>
 
     </div>
-    
+
 </div>

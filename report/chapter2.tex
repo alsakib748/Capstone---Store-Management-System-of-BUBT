@@ -1,0 +1,108 @@
+\chapter{BACKGROUND STUDY AND LITERATURE REVIEW}
+\label{chap:background}
+
+\section{Background Study}
+
+Inventory management is an essential function in every educational institution and organization, ensuring that products and resources are available when needed while minimizing waste and operational costs. Traditionally, many institutions rely on manual record-keeping or spreadsheet-based systems to manage inventory, purchases, and stock distribution. Although these methods are simple to implement, they often lead to inaccurate inventory records, duplicate data, delayed requisition processing, inefficient stock control, and limited reporting capabilities \cite{web_inventory_systems}. As the number of users, products, and transactions increases, manual systems become increasingly difficult to maintain and are more susceptible to human error.
+
+The evolution of inventory management systems has progressed from simple manual records to sophisticated automated solutions. Early computer-based inventory systems were primarily standalone applications that operated on individual computers without network connectivity. These systems offered basic functionality for tracking stock levels and generating simple reports but lacked the integration capabilities required for modern operations.
+
+Web-based inventory management systems have become widely adopted in recent years due to their accessibility, scalability, and cost-effectiveness. Modern systems integrate product management, supplier management, purchasing, requisition processing, stock issuance, damage tracking, and reporting into a centralized platform. They also provide real-time inventory updates, secure user authentication, and role-based access control, enabling organizations to improve operational efficiency, maintain data accuracy, and support informed decision-making \cite{laravel_inventory}.
+
+The Store Management System of BUBT has been developed based on these modern inventory management principles. Built using Laravel, MySQL, Tailwind CSS, and related technologies, the system provides a secure and scalable platform for managing institutional store operations. It supports automated workflows for purchasing, requisitions, product issuance, quotations, damage management, and comprehensive reporting while maintaining accurate stock records and ensuring transparency through role-based access control.
+
+As a result, the system significantly enhances the efficiency and reliability of inventory management within the university. The adoption of web-based technologies enables remote access, allowing authorized personnel to manage inventory from any location with internet connectivity. This flexibility is particularly valuable in large campus environments where store personnel may need to operate from multiple locations.
+
+\section{Literature Review}
+
+This section presents a comprehensive review of existing literature and research related to web-based inventory management systems. The review examines various approaches to inventory management, technologies used, and lessons learned from previous implementations.
+
+\subsection{Laravel for Inventory Management Application Development}
+
+Laravel has emerged as one of the most popular frameworks for developing web-based inventory management applications due to its elegant syntax, comprehensive feature set, and strong community support. Research by Kambivi et al. \cite{laravel_pos} demonstrates that Laravel's structured architecture and efficient routing system make it ideal for developing inventory management applications that require tracking stock activities such as ordering, updating, and reporting.
+
+The framework's built-in features for database migration, query building, and template engine simplify the development process and ensure code quality. Laravel's Eloquent ORM provides an intuitive way to interact with database tables, making it easier to implement complex inventory relationships and queries. Additionally, Laravel's artisan command-line tool automates repetitive development tasks, improving programmer productivity.
+
+Studies have shown that Laravel-based inventory systems support real-time stock updates and automated report generation for better inventory control. The framework's event and listener system enables developers to trigger automatic actions when specific inventory events occur, such as sending notifications when stock falls below reorder levels.
+
+\subsection{Web-based Systems to Control Inventories in Organizations}
+
+A systematic review of web-based inventory systems used in different sectors by Misahuaman and Daza \cite{web_inventory_systems} identifies key factors that contribute to successful inventory management system implementations. The review highlights that Laravel is a popular framework due to its scalability and MVC architecture, while MySQL is commonly used for database management.
+
+The research emphasizes that web-based systems improve real-time updates and decision-making capabilities compared to traditional desktop applications. Centralized data storage enables multiple users to access current inventory information simultaneously, eliminating the inconsistencies that arise from maintaining separate records.
+
+The review also identifies common challenges in inventory system implementation, including data migration from legacy systems, user adoption and training, and system integration with existing organizational processes. These findings informed the design decisions in the BUBT Store Management System.
+
+\subsection{Inventory Stock System with FIFO Technique}
+
+The implementation of First-In-First-Out (FIFO) technique in inventory systems using Laravel and MySQL has been explored by Bagus and Nuryana \cite{fifo_inventory}. The FIFO method ensures that older stock is used first, which is particularly important for perishable items and products with expiration dates.
+
+The study demonstrates how database design and application logic can be combined to enforce FIFO inventory tracking. By recording the purchase date and batch number for each inventory item, the system can automatically identify and consume the oldest stock first when processing issues or sales. This approach reduces waste and improves inventory accuracy.
+
+While the BUBT system does not implement strict FIFO tracking, the database design supports future enhancement with batch and expiration date tracking. This consideration demonstrates the system's scalability and ability to accommodate evolving requirements.
+
+\subsection{University Inventory Management Systems}
+
+Several research studies have examined the specific requirements and challenges of managing inventory in educational institutions. Soni et al. \cite{university_inventory} present a comprehensive system for university inventory management using Laravel, HTML, CSS, JavaScript, and MySQL. The system supports asset tracking, requisition handling, and reporting for efficient resource management in universities.
+
+The research identifies unique requirements for university inventory systems, including the need to manage diverse categories of items from office supplies to laboratory equipment. The system must support multiple user roles, including administrators, faculty members, and department staff, each with different access privileges and operational requirements.
+
+Similarly, Razikin et al. \cite{laboratory_inventory} developed a laboratory inventory system using Laravel and MySQL with real-time monitoring and low-stock alerts. The system demonstrates how automated notifications can improve inventory management in specialized academic environments where specific items may be critical for research and teaching activities.
+
+These studies confirm that web-based inventory systems significantly improve operational efficiency in educational settings. The BUBT Store Management System builds upon these proven approaches while adding features specific to the university's operational requirements.
+
+\subsection{RFID-based Inventory Management System}
+
+The integration of Radio Frequency Identification (RFID) technology with inventory management systems has been explored as a way to automate stock tracking and reduce manual data entry errors. Rozario \cite{rfid_inventory} presents an RFID-based system that improves accuracy and reduces manual errors through real-time updates.
+
+While the current implementation of the BUBT system does not include RFID integration, the architecture is designed to accommodate such enhancements in the future. The database design supports item-level tracking that could be enhanced with RFID tags, and the user interface can be extended to include scanning functionality.
+
+The research demonstrates the potential for automation in inventory management and provides a roadmap for future enhancements to the BUBT system. As RFID technology becomes more affordable, incorporating it could further improve inventory accuracy and reduce processing time.
+
+\subsection{Office Stationery Inventory System}
+
+Jamaludin et al. \cite{office_inventory} developed an office stationery inventory system using Laravel and MySQL for managing office supplies. The system supports purchase tracking, stock monitoring, and inventory alerts to ensure that essential items remain available.
+
+The research highlights the importance of maintaining optimal stock levels to support daily operations. Overstocking ties up financial resources and storage space, while understocking can disrupt institutional activities. The BUBT system addresses these concerns through real-time stock tracking and comprehensive reporting capabilities.
+
+The study also demonstrates how automated alerts can help inventory managers respond quickly to stock shortages. The BUBT system could incorporate similar alert mechanisms in future enhancements to further improve inventory management efficiency.
+
+\section{Problem Analysis}
+
+The Problem Analysis for the Store Management System of BUBT focuses on identifying the functional and security gaps that necessitate a centralized digital system. Based on the analysis of existing processes and system requirements, several key problems have been identified:
+
+\subsection{Security and Access Control Vulnerabilities}
+
+The system requires a secure barrier between institutional data and unauthorized users. Without proper authentication mechanisms, sensitive inventory and resource data may be exposed to unauthorized access, leading to inaccurate records or misuse of institutional assets. The implementation of a secure Login Page provides the primary layer of protection for institutional records.
+
+Role-based access control is essential to ensure that users can only perform actions appropriate to their responsibilities. Administrators require full access to all system functions, while departmental users should be limited to requisition creation and status viewing. The absence of granular access control in previous systems created security risks and accountability issues.
+
+\subsection{Inefficient User Onboarding}
+
+Manual registration of new administrative staff is time-consuming and error-prone. The requirement for automated user creation processes ensures fast and consistent onboarding of new users into the system. Without self-service registration capabilities, the IT department becomes a bottleneck for user provisioning.
+
+The system addresses this challenge by implementing a registration feature that allows new users to create accounts with appropriate role assignments. This automation reduces administrative overhead and ensures that new personnel can quickly gain access to the system.
+
+\subsection{Operational Disruptions from Credential Issues}
+
+Traditional systems often depend on IT support for password recovery, causing delays in user access restoration. The inclusion of self-service password recovery features addresses this issue by enabling users to reset their credentials independently, ensuring uninterrupted access for users.
+
+Password recovery mechanisms must balance security with usability. The system implements secure token-based verification that validates user identity before allowing password changes, preventing unauthorized access while eliminating dependency on IT support.
+
+\subsection{Authentication Rigidity and User Experience}
+
+Single-method authentication can reduce usability and increase password fatigue. The implementation of multiple authentication methods, including integration with external identity providers, introduces flexibility for users who prefer existing credentials over creating new ones.
+
+However, the current implementation focuses on secure local authentication with potential for future OAuth integration. This approach ensures that the system remains functional even if external identity services are unavailable.
+
+\subsection{Data Management Inaccuracy}
+
+Manual record-keeping introduces frequent errors in inventory tracking. A digital system ensures that all transactions are linked to verified user identities, improving data accuracy, reliability, and consistency. The automated workflows reduce opportunities for human error while maintaining complete audit trails.
+
+The transition from manual to digital systems addresses data fragmentation by providing a centralized repository for all inventory information. This centralization enables better data analysis and decision-making while eliminating the inconsistencies that arise from maintaining separate records.
+
+\section{Summary}
+
+The literature review confirms that web-based inventory management systems offer significant advantages over traditional manual approaches. Laravel has proven to be a suitable framework for developing such systems due to its robust features, security capabilities, and developer-friendly syntax. The research demonstrates that successful implementations improve operational efficiency, reduce errors, and provide better visibility into inventory operations.
+
+The BUBT Store Management System incorporates best practices identified in the literature while addressing specific requirements identified through problem analysis. The system's architecture supports current operational needs while providing flexibility for future enhancements.

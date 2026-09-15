@@ -326,3 +326,7 @@ Route::middleware('auth')->group(function () {
 
 
 });
+
+Route::get('/developer', function () {
+    return view('admin.body.developer');
+});

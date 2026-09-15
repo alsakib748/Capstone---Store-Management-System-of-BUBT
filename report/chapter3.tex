@@ -1,0 +1,470 @@
+\chapter{SYSTEM ANALYSIS AND DESIGN}
+\label{chap:analysis}
+
+\section{Methodology}
+
+The development of the Store Management System of BUBT followed the Agile Scrum methodology. Agile Scrum is an iterative and incremental software development approach that emphasizes collaboration, flexibility, continuous improvement, and frequent delivery of functional software \cite{agile_methodology}.
+
+The Agile Scrum methodology was selected because the project requirements evolved throughout the development process. Continuous feedback from stakeholders and supervisors allowed the development team to refine system features and improve functionality during each development cycle. This approach proved particularly valuable given the complex nature of institutional store operations that required careful analysis and multiple refinements.
+
+The development process was divided into several short iterations called sprints. Each sprint focused on a specific set of functionalities and produced a working increment of the system. The use of sprints enabled the team to deliver usable features early in the development process and incorporate feedback before proceeding to subsequent iterations.
+
+The major phases of the Scrum methodology used in this project are described below:
+
+\subsection{Requirement Gathering and Product Backlog}
+
+Initially, requirements were collected from the existing store management process at BUBT. Problems in the existing system were identified, and all required features such as product management, supplier management, requisition processing, issue management, reporting, and user management were documented in the product backlog. The backlog served as a single source of truth for all planned features and improvements.
+
+Requirements gathering involved interviews with store administrators, department heads, and administrative staff to understand their daily operations and pain points. This direct engagement ensured that the developed system would address real user needs rather than assumed requirements.
+
+\subsection{Sprint Planning}
+
+The product backlog was divided into smaller tasks and prioritized according to project requirements. Each sprint was planned to implement a specific module of the system within a fixed period. The planning process considered dependencies between modules and ensured that foundational components were completed before dependent features.
+
+Sprint planning also included estimation of effort required for each task, allowing the team to set realistic goals and track progress effectively. Regular sprint reviews provided opportunities to reassess priorities and adjust plans based on changing requirements.
+
+\subsection{Sprint Development}
+
+During each sprint, system modules were designed, developed, and integrated. Major development sprints included:
+
+\begin{itemize}
+    \item \textbf{Sprint 1}: Authentication and Role Management - Implementation of user registration, login, password recovery, and role-based access control using Laravel Breeze and Spatie Permission.
+
+    \item \textbf{Sprint 2}: Product, Brand, Category, and Supplier Management - Development of core entity management modules with image handling using Intervention Image.
+
+    \item \textbf{Sprint 3}: Purchase and Inventory Management - Implementation of purchase order workflow, receiving, and automatic stock updates.
+
+    \item \textbf{Sprint 4}: Requisition and Issue Management - Development of requisition submission, approval workflow, and product issuance with inventory deduction.
+
+    \item \textbf{Sprint 5}: Damage Product and Return Management - Implementation of damage reporting, return processing, and issue return handling.
+
+    \item \textbf{Sprint 6}: Report Generation and PDF System - Development of comprehensive reports using Barryvdh Laravel DomPDF for PDF generation.
+
+    \item \textbf{Sprint 7}: Chat System and Final Integration - Integration of Chatify with Pusher for real-time communication and final system testing.
+\end{itemize}
+
+Each sprint followed a consistent development workflow including coding, unit testing, integration testing, and documentation. The iterative approach allowed for early detection and correction of issues.
+
+\subsection{Testing and Review}
+
+At the end of each sprint, the developed features were tested to identify bugs and ensure proper functionality. Feedback was collected from users and stakeholders, and necessary modifications were implemented before proceeding to the next sprint. This continuous feedback loop ensured that the final product met user expectations.
+
+Testing activities included unit testing of individual components, integration testing of module interactions, and system testing of complete workflows. Manual testing supplemented automated tests to identify usability issues and edge cases.
+
+\subsection{Deployment and Evaluation}
+
+After completing all sprints, the entire system was integrated, tested, and evaluated. Performance, usability, and functionality were assessed to ensure that the developed system satisfied the project requirements. The evaluation included feedback from actual users who would interact with the system in production.
+
+By following the Agile Scrum methodology, the project achieved better flexibility, continuous improvement, early detection of problems, and efficient development of the Store Management System of BUBT.
+
+\section{System Architecture}
+
+The system architecture for the Store Management System of BUBT is designed as a secure, multi-tier web framework. It transforms manual university store operations into an automated and centralized digital environment with strong emphasis on security, scalability, and data integrity. The architecture follows the Model-View-Controller (MVC) pattern provided by the Laravel framework.
+
+\subsection{Presentation Layer (Frontend)}
+
+This layer provides the user-facing interface for BUBT personnel. The frontend is developed using Blade templates, Tailwind CSS for styling, and Alpine.js for interactivity. Key components include:
+
+\begin{itemize}
+    \item \textbf{Authentication Interface}: A centralized Login Page acts as the secure entry point to the system.
+    \item \textbf{User Onboarding and Recovery}: Includes registration for new user creation and password recovery for self-service credential retrieval.
+    \item \textbf{Responsive Design}: The interface is designed to be accessible across multiple devices, ensuring consistent usability for store administrators and department users.
+\end{itemize}
+
+The presentation layer communicates with the application layer through HTTP requests, receiving HTML responses that are rendered in the user's browser. JavaScript AJAX calls enable dynamic interactions without page reloads.
+
+\subsection{Application Logic Layer (Backend)}
+
+This layer acts as the core processing engine of the system, implemented using Laravel controllers, middleware, and services. Key components include:
+
+\begin{itemize}
+    \item \textbf{Automated User Management}: Handles registration, login processing, and password recovery through automated workflows.
+    \item \textbf{Validation and Security Logic}: Ensures input validation and protects against vulnerabilities such as SQL injection and cross-site scripting (XSS), maintaining data integrity.
+    \item \textbf{Business Logic Implementation}: Controllers implement the business rules for all system operations, including inventory management, purchase processing, and requisition workflows.
+\end{itemize}
+
+Middleware components provide cross-cutting concerns such as authentication verification, role checking, and request logging. This separation of concerns improves code organization and maintainability.
+
+\subsection{Data Storage Layer (Database)}
+
+This layer manages all institutional data in a structured and reliable format using MySQL. The database design ensures ACID (Atomicity, Consistency, Isolation, Durability) properties for consistent and reliable data storage. Key features include:
+
+\begin{itemize}
+    \item \textbf{Relational Database System}: MySQL provides robust relational data management with support for complex queries and transactions.
+    \item \textbf{Inventory Tracking}: Stores all information related to university assets, enabling accurate tracking and reporting.
+    \item \textbf{Eloquent ORM}: Laravel's Eloquent ORM provides an abstraction layer that simplifies database interactions and maintains code readability.
+\end{itemize}
+
+Database migrations ensure consistent schema management across development environments and production deployments. This approach allows the team to version control the database structure along with the application code.
+
+\subsection{External Services Integration}
+
+The system integrates with external services to enhance functionality:
+
+\begin{itemize}
+    \item \textbf{DomPDF}: For PDF report generation, enabling users to export reports in portable document format.
+    \item \textbf{Intervention Image}: For image processing, including resizing and optimization of product images.
+    \item \textbf{Chatify with Pusher}: For real-time messaging capabilities between users.
+\end{itemize}
+
+These integrations extend the system's capabilities without compromising core functionality or performance.
+
+\subsection{Security Architecture}
+
+Security is implemented across all layers of the system to protect institutional data:
+
+\begin{itemize}
+    \item \textbf{Gatekeeper Protocol}: The Login Page serves as the primary security barrier for the entire system.
+    \item \textbf{Encrypted Communication}: Data transmission between frontend and backend is secured using HTTPS protocol to prevent unauthorized access and interception.
+    \item \textbf{Password Hashing}: User passwords are securely hashed using bcrypt algorithm, ensuring that plaintext credentials are never stored.
+    \item \textbf{Session Management}: Secure session tokens maintain authenticated user sessions during system interaction.
+    \item \textbf{Role-based Access Control}: Laravel's security middleware ensures that users can only access resources and functions permitted for their role.
+\end{itemize}
+
+The security architecture follows industry best practices and OWASP guidelines to minimize vulnerabilities and protect against common attacks.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figure/system_architecture.png}
+    \caption{System Architecture of Store Management System}
+    \label{fig:system_architecture}
+\end{figure}
+
+\section{Feasibility Study}
+
+A feasibility study was conducted to evaluate whether the Store Management System of BUBT could be successfully developed and implemented. The study examined technical, economic, operational, and schedule aspects to ensure that the proposed system would meet institutional requirements effectively.
+
+\subsection{Technical Feasibility}
+
+The system is developed using modern and reliable technologies, including Laravel 12.0, PHP 8.2, MySQL, Tailwind CSS, Alpine.js, and Vite. These technologies provide a secure, scalable, and maintainable platform capable of supporting inventory management, user authentication, report generation, and real-time communication.
+
+The required software tools and development environment are readily available, and the development team possesses the necessary skills to work with these technologies. Laravel's extensive documentation and community support provide valuable resources for troubleshooting and learning.
+
+The technical feasibility assessment confirmed that all required functionality could be implemented using the selected technologies without requiring additional specialized tools or expertise.
+
+\subsection{Economic Feasibility}
+
+The project is cost-effective because it utilizes open-source technologies such as Laravel, PHP, and MySQL, eliminating expensive software licensing costs. The initial development investment is offset by long-term benefits including reduced paperwork, minimized manual errors, saved administrative time, and improved resource utilization.
+
+The automation of store operations reduces the labor required for routine tasks, allowing staff to focus on more valuable activities. These efficiency gains provide ongoing financial benefits for the university that exceed the development costs.
+
+The economic analysis demonstrates a positive return on investment within a reasonable timeframe, making the project economically viable.
+
+\subsection{Operational Feasibility}
+
+The system is designed to support the daily activities of store administrators and departmental users. Features such as product management, purchase management, requisition processing, issue management, damage tracking, quotations, and reporting simplify store operations and improve workflow efficiency.
+
+The user-friendly interface and role-based access control ensure that users can perform their responsibilities effectively with minimal training. The design prioritizes simplicity and intuitiveness to maximize user adoption.
+
+Operational feasibility was confirmed through user acceptance testing, which demonstrated that the system meets the operational requirements of BUBT's store management processes.
+
+\subsection{Schedule Feasibility}
+
+The project can be completed within the planned development timeline by following a structured software development process. The modular architecture allows individual components to be developed, tested, and integrated systematically, reducing project risks and ensuring timely completion.
+
+The Agile development approach provides flexibility to accommodate changes while maintaining schedule discipline. Regular sprint reviews ensure progress is tracked and issues are addressed promptly.
+
+Overall, the feasibility study indicates that the Store Management System of BUBT is technically sound, economically viable, operationally practical, and achievable within the proposed schedule.
+
+\section{Requirement Analysis}
+
+The requirement analysis for the Store Management System of BUBT was conducted to identify the functional and non-functional requirements necessary for developing an efficient inventory management system.
+
+\subsection{Functional Requirements}
+
+The functional requirements define the specific behaviors and services the system must provide:
+
+\begin{enumerate}
+    \item \textbf{User Authentication and Access Control}
+    \begin{itemize}
+        \item Secure login portal with centralized authentication
+        \item User registration with role assignment
+        \item Password recovery functionality
+    \end{itemize}
+
+    \item \textbf{Product Management}
+    \begin{itemize}
+        \item Create, read, update, and delete products
+        \item Category and subcategory management
+        \item Brand management
+        \item Product image handling
+        \item SKU assignment
+    \end{itemize}
+
+    \item \textbf{Supplier Management}
+    \begin{itemize}
+        \item Supplier information management
+        \item Contact details maintenance
+        \item Purchase history tracking
+    \end{itemize}
+
+    \item \textbf{Purchase Management}
+    \begin{itemize}
+        \item Purchase order creation
+        \item Purchase approval workflow
+        \item Purchase receiving and stock update
+        \item Purchase invoice generation
+    \end{itemize}
+
+    \item \textbf{Requisition Management}
+    \begin{itemize}
+        \item Requisition creation by department users
+        \item Requisition approval by administrators
+        \item Requisition status tracking
+    \end{itemize}
+
+    \item \textbf{Issue Management}
+    \begin{itemize}
+        \item Product issuance based on approved requisitions
+        \item Automatic stock deduction
+        \item Issue history tracking
+        \item Issue invoice generation
+    \end{itemize}
+
+    \item \textbf{Damage Product Management}
+    \begin{itemize}
+        \item Damage product reporting
+        \item Damage item tracking
+        \item Damage report generation
+    \end{itemize}
+
+    \item \textbf{Quotation Management}
+    \begin{itemize}
+        \item Quotation creation from suppliers
+        \item Quotation comparison
+        \item Quotation approval workflow
+    \end{itemize}
+
+    \item \textbf{Reporting}
+    \begin{itemize}
+        \item Stock status reports
+        \item Purchase reports
+        \item Issue reports
+        \item Damage reports
+        \item PDF export functionality
+    \end{itemize}
+
+    \item \textbf{User and Role Management}
+    \begin{itemize}
+        \item User creation and management
+        \item Role assignment
+        \item Permission management
+        \item Department management
+    \end{itemize}
+
+    \item \textbf{Communication}
+    \begin{itemize}
+        \item Real-time messaging between users
+        \item Notification system
+    \end{itemize}
+\end{enumerate}
+
+The system also requires secure user authentication, role-based authorization, accurate inventory tracking, real-time stock updates, and comprehensive reporting to ensure transparency and efficient decision-making.
+
+\subsection{Non-Functional Requirements}
+
+The non-functional requirements define quality standards and operational constraints:
+
+\begin{enumerate}
+    \item \textbf{Security}
+    \begin{itemize}
+        \item Mandatory authentication for all users
+        \item Encrypted data transmission using HTTPS
+        \item Role-based access control
+        \item Secure password storage
+    \end{itemize}
+
+    \item \textbf{Reliability}
+    \begin{itemize}
+        \item 24/7 system availability
+        \item Data backup and recovery mechanisms
+        \item Error handling and logging
+    \end{itemize}
+
+    \item \textbf{Performance}
+    \begin{itemize}
+        \item Fast response times for user interactions
+        \item Efficient database queries
+        \item Support for multiple concurrent users
+    \end{itemize}
+
+    \item \textbf{Usability}
+    \begin{itemize}
+        \item Intuitive user interface
+        \item Responsive design for multiple devices
+        \item Minimal training requirements
+    \end{itemize}
+
+    \item \textbf{Scalability}
+    \begin{itemize}
+        \item Support for increasing users and data
+        \item Modular architecture for easy enhancement
+    \end{itemize}
+
+    \item \textbf{Maintainability}
+    \begin{itemize}
+        \item Clean, documented code
+        \item Standard coding conventions
+        \item Version control implementation
+    \end{itemize}
+\end{enumerate}
+
+In addition, the application should provide a user-friendly interface, reliable performance, data integrity, scalability, and maintainability to support future enhancements and increasing organizational needs.
+
+\section{Database Design}
+
+The database design includes interconnected entities that ensure accurate tracking of inventory movement from purchase to issue, return, damage, and reporting.
+
+\subsection{Entity Relationship Diagram}
+
+The Entity-Relationship Diagram (ERD) defines the logical data structure required to support an efficient and automated inventory management system.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figure/er_diagram.png}
+    \caption{Entity Relationship Diagram}
+    \label{fig:er_diagram}
+\end{figure}
+
+\subsection{Key Entities}
+
+\begin{enumerate}
+    \item \textbf{Users}: Stores information of all users accessing the system
+    \begin{itemize}
+        \item id, name, email, password, role\_id, department\_id, avatar, messenger\_color, active\_status, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Departments}: Organizational departments within the university
+    \begin{itemize}
+        \item id, name, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Semesters}: Academic semesters for temporal organization
+    \begin{itemize}
+}
+        \item id, name, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Brands}: Product brand information
+    \begin{itemize}
+        \item id, name, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Product Categories}: Product category classification
+    \begin{itemize}
+        \item id, category\_name, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Subcategories}: Subcategory within categories
+    \begin{itemize}
+        \item id, category\_id, subcategory\_name, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Suppliers}: Vendor information
+    \begin{itemize}
+        \item id, name, contact\_person, phone, email, address, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Products}: Main inventory items
+    \begin{itemize}
+}
+        \item id, name, category\_id, subcategory\_id, brand\_id, sku, quantity, price, image, description, fixed\_asset, role\_permissions, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Purchases}: Purchase order records
+    \begin{itemize}
+        \item id, purchase\_date, tracking\_number, note\_number, semester\_id, department\_id, subtotal, grand\_total, file, color, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Purchase Items}: Individual items in a purchase order
+    \begin{itemize}
+        \item id, purchase\_id, product\_id, quantity, unit\_price, total\_price, expiry\_date, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Return Purchases}: Returned purchase orders
+    \begin{itemize}
+        \item id, return\_date, tracking\_number, note\_number, semester\_id, department\_id, subtotal, grand\_total, file, color, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Requisitions}: Requisition requests from departments
+    \begin{itemize}
+        \item id, user\_id, semester\_id, requisition\_date, status, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Requisition Items}: Items requested in requisitions
+    \begin{itemize}
+        \item id, requisition\_id, product\_id, quantity, status, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Issues}: Product issuance records
+    \begin{itemize}
+        \item id, user\_id, requisition\_id, semester\_id, issue\_date, status, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Issue Items}: Items issued
+    \begin{itemize}
+}
+        \item id, issue\_id, product\_id, quantity, status, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Damage Products}: Damaged product records
+    \begin{itemize}
+        \item id, damage\_date, user\_id, semester\_id, total\_loss, note, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Damage Product Items}: Individual damaged items
+    \begin{itemize}
+        \item id, damage\_product\_id, product\_id, quantity, unit\_price, total\_price, reason, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Quotations}: Supplier quotations
+    \begin{itemize}
+        \item id, supplier\_id, quotation\_date, valid\_until, total\_amount, status, created\_at, updated\_at
+    \end{itemize}
+
+    \item \textbf{Quotation Items}: Items in quotations
+    \begin{itemize}
+        \item id, quotation\_id, product\_id, quantity, unit\_price, total\_price, created\_at, updated\_at
+    \end{itemize}
+\end{enumerate}
+
+The relationships between these entities ensure accurate tracking of inventory movement throughout the system lifecycle.
+
+\section{Development Model}
+
+The development of the Store Management System follows a modified Waterfall Model combined with Agile principles. This hybrid approach provides structure for initial planning while allowing flexibility for iterative development and refinement.
+
+The development process includes five distinct phases:
+
+\begin{enumerate}
+    \item \textbf{Requirement Analysis}: Defining system requirements, including security protocols and functional requirements for all modules.
+    \item \textbf{System Design}: Designing UI/UX interface and developing the relational database schema.
+    \item \textbf{Implementation}: Developing the web-based system including all management modules.
+    \item \textbf{Testing and Quality Assurance}: System validation, security testing, and performance testing.
+    \item \textbf{Deployment}: Final deployment, data migration, and user training.
+\end{enumerate}
+
+This disciplined framework ensures that the final platform achieves its core objectives of minimizing manual errors and providing fast and reliable data management.
+
+\section{Use Case Diagram}
+
+The Use Case Diagram illustrates the interaction between system users (actors) and core functionalities.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figure/use_case_diagram.png}
+    \caption{Use Case Diagram}
+    \label{fig:use_case}
+\end{figure}
+
+The primary actors in the system include:
+
+\begin{itemize}
+    \item \textbf{Super Admin}: Full system access including user management and role assignment
+    \item \textbf{Admin}: Product, supplier, purchase, and report management
+    \item \textbf{Store Manager}: Inventory operations management
+    \item \textbf{Department User}: Requisition creation and status viewing
+    \item \textbf{External System}: Integration capabilities for future enhancements
+\end{itemize}
+
+Each actor interacts with specific use cases based on their role and permissions, ensuring appropriate access control throughout the system.

@@ -1,0 +1,18 @@
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+The project, \textbf{Store Management System of BUBT}, is a web-based inventory and store management application developed to automate and simplify institutional store operations at Bangladesh University of Business and Technology. The system provides a centralized digital platform where university store-related activities such as product management, brand management, supplier management, purchase management, requisition processing, product issuing, return handling, damage product tracking, quotation management, and report generation can be performed efficiently.
+
+By replacing manual and paper-based store records with an organized online system, the project helps reduce administrative workload, minimize data errors, improve stock accuracy, and ensure faster access to store information. The system features automated workflows that streamline the entire inventory lifecycle from procurement to issuance and reporting.
+
+The system is developed using Laravel 12.0, PHP 8.2, MySQL, Tailwind CSS, Alpine.js, and Vite, making it secure, scalable, and user-friendly. It follows a layered architecture consisting of client, presentation, application, data, and external service layers. Users access the system through a web browser, while Blade templates, Tailwind CSS, and Alpine.js handle the interface and interactivity. Controllers, middleware, and services manage the business logic, authentication, and authorization, while Eloquent models and database migrations handle data storage in MySQL. The system also integrates external services such as DomPDF for PDF report generation and Chatify with Pusher for real-time communication.
+
+The system supports role-based access control using Laravel Breeze and Spatie Permission, allowing different users to access specific modules according to their responsibilities. Super Admins and Admins can manage brands, suppliers, products, purchases, requisitions, issues, damaged products, quotations, reports, roles, and permissions. Department users can create product requisitions and view relevant reports. The purchase workflow updates stock after products are added, while the requisition and issue workflow ensures that product requests are reviewed, approved, issued, and deducted from stock properly. This structured process improves accountability and transparency in university resource management.
+
+The database design includes interconnected entities such as users, departments, semesters, brands, product categories, subcategories, suppliers, products, purchases, purchase items, return purchases, requisitions, issues, issue returns, damage products, quotations, and related item tables. These relationships ensure accurate tracking of inventory movement from purchase to issue, return, damage, and reporting. Additional features such as product image handling through Intervention Image, PDF report generation using Barryvdh Laravel DomPDF, and real-time chat support enhance the overall efficiency and usability of the system.
+
+Overall, the Store Management System of BUBT represents a complete digital solution for managing university store operations. It improves inventory control, reduces paperwork, ensures accurate stock monitoring, supports secure access control, and provides reliable reports for administrative decision-making. The system is suitable for institutional environments where transparency, accountability, organized resource distribution, and efficient store management are essential.
+
+\vfill
+
+\textbf{Keywords:} Inventory Management, Store Management, Web Application, Laravel, University System, Role-Based Access Control, Automated Workflow, PDF Report Generation

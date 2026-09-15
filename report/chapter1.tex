@@ -1,0 +1,106 @@
+\chapter{INTRODUCTION}
+\label{chap:introduction}
+
+\section{Background of the Study}
+
+The Store Management System of BUBT is a comprehensive web-based inventory and store management application developed to automate and streamline the store operations of Bangladesh University of Business and Technology (BUBT). The system provides a centralized digital platform where university store-related activities such as product management, brand management, supplier management, purchase management, requisition processing, product issuing, return handling, damage product tracking, quotation management, and report generation can be performed efficiently \cite{bubt_inventory}.
+
+In many educational institutions, store and inventory management activities are often performed manually using paper records, spreadsheets, and traditional documentation methods. These manual processes frequently result in inaccurate stock records, data redundancy, delayed approval procedures, difficulties in report generation, and a lack of transparency in inventory management \cite{web_inventory_systems}. Such limitations increase administrative workload and reduce operational efficiency, making it difficult for institutions to maintain accurate records of their inventory and resources.
+
+To overcome these problems, the proposed Store Management System has been designed and developed using modern web technologies including Laravel, MySQL, Tailwind CSS, Alpine.js, and role-based access control mechanisms. The system digitalizes the entire inventory management process, allowing administrators and departmental users to perform their respective tasks efficiently through a secure web application \cite{laravel_inventory}.
+
+The system is primarily intended for store administrators, departmental users, administrative staff, and management personnel of BUBT. Department users can submit product requisitions according to their requirements, while administrators can review requests, manage purchases, issue products, monitor inventory levels, and generate various reports. The role-based permission system ensures secure access and allows each user to access only the functionalities assigned to their responsibilities.
+
+The operational workflow of the system begins with user authentication and authorization. Administrators manage products, suppliers, categories, and stock information, while departmental users submit requisition requests. Approved requisitions lead to product issuance, and the system automatically updates inventory quantities. Purchase orders are created when stock replenishment is necessary, and damaged or returned products are also properly recorded. Additionally, the system provides real-time reporting and PDF generation facilities to support effective decision-making and inventory monitoring \cite{university_inventory}.
+
+\section{Problem Statement}
+
+The existing store management system used at Bangladesh University of Business and Technology (BUBT) is primarily a desktop-based application that suffers from several operational and technological limitations. Since the system is installed on specific computers, users cannot access it remotely through the internet, which restricts flexibility and reduces operational efficiency.
+
+Several store management activities are still performed manually, including product tracking, requisition handling, and certain inventory operations. These manual procedures increase the possibility of human errors, data inconsistency, and delays in administrative processes. The lack of automation in routine tasks creates bottlenecks in the approval workflow and makes it difficult to maintain real-time inventory records.
+
+The existing software was developed using older technologies that do not support modern responsive user interfaces. As a result, the application does not properly adjust to different screen sizes and resolutions, causing usability problems on various monitors and devices. This limitation prevents users from accessing the system conveniently from different locations and devices.
+
+Another significant limitation is the reporting mechanism. The current system relies on third-party plugins for generating managerial reports, invoices, and PDF documents. These plugins often create compatibility issues across different platforms and operating environments, resulting in report generation failures and document formatting problems. The dependency on external libraries also introduces security vulnerabilities and maintenance challenges.
+
+Furthermore, the existing system lacks an integrated communication facility. There is no real-time chat or messaging system to facilitate communication between administrators and departmental users, which may delay information exchange and operational coordination. This gap in communication affects the efficiency of requisition approval processes and issue resolution.
+
+Considering these limitations, there is a need for a modern, web-based, responsive, and centralized store management system that supports remote accessibility, automated inventory operations, reliable report generation, cross-platform compatibility, and real-time communication facilities. The proposed Store Management System of BUBT has been developed to address these challenges and improve the overall efficiency of store management activities.
+
+\section{Problem Background}
+
+Many educational institutions still manage store and inventory operations manually or using basic spreadsheet systems. These traditional methods often lead to inaccurate stock records, delayed product requisitions, inefficient purchase management, difficulty tracking issued and damaged products, and limited reporting capabilities \cite{fifo_inventory}. As the volume of inventory and users increases, managing these operations becomes more complex and error-prone.
+
+At Bangladesh University of Business and Technology (BUBT), the store management process requires an integrated system that can efficiently handle product management, supplier information, purchase orders, requisitions, product issuance, damage tracking, quotations, and report generation. Without a centralized system, administrators face challenges in maintaining accurate inventory data, ensuring transparency, and controlling user access.
+
+Traditional inventory management approaches suffer from several critical issues that impact operational efficiency. Data fragmentation occurs when different departments maintain separate records, leading to inconsistencies and duplication. Manual tracking of inventory movements is time-consuming and prone to human error, resulting in stock discrepancies and inaccurate financial reporting. The lack of automated workflows delays approval processes and creates bottlenecks in the procurement cycle.
+
+The absence of real-time visibility into inventory levels makes it difficult to make informed purchasing decisions. Without accurate data on stock movements, departments may face shortages of essential items or overstock items that expire before use. Additionally, the inability to generate comprehensive reports limits the institution's ability to analyze spending patterns and optimize resource allocation.
+
+To address these issues, the Store Management System of BUBT has been developed using Laravel, MySQL, and modern web technologies. The system provides role-based access control, automated inventory management, real-time stock updates, requisition and approval workflows, comprehensive reporting, and secure authentication. This integrated solution improves operational efficiency, reduces manual errors, enhances accountability, and enables better decision-making for store administration \cite{laboratory_inventory}.
+
+\section{Objectives}
+
+The primary objective of the Store Management System of BUBT is to develop a centralized, secure, and efficient inventory management platform that automates store-related activities and improves overall operational efficiency. The system aims to simplify product management, supplier management, purchase processing, requisition handling, product issuance, damage tracking, and report generation through a single integrated solution.
+
+The specific objectives of this project are as follows:
+
+\begin{enumerate}
+    \item \textbf{Product Management}: To develop a comprehensive module for managing products, categories, subcategories, and brands with efficient search and filtering capabilities.
+
+    \item \textbf{Supplier Management}: To create a supplier database that maintains vendor information, contact details, and purchase history for effective supplier relationship management.
+
+    \item \textbf{Purchase Management}: To automate the purchase order workflow, including order creation, approval, receiving, and stock updates with full audit trail capabilities.
+
+    \item \textbf{Requisition and Issue Management}: To implement a digital requisition system that allows department users to request products and administrators to process issues with automatic inventory deduction.
+
+    \item \textbf{Reporting and Analytics}: To generate comprehensive reports including stock status, purchase history, issue records, damage reports, and financial summaries in both web and PDF formats.
+
+    \item \textbf{Security and Access Control}: To implement role-based access control ensuring that users can only access functionalities appropriate to their responsibilities.
+
+    \item \textbf{Real-time Communication}: To integrate a messaging system that facilitates communication between administrators and department users for improved coordination.
+\end{enumerate}
+
+The system also seeks to maintain accurate inventory records, provide real-time stock updates, ensure transparency in store operations, and implement role-based access control for enhanced security. By reducing manual work and minimizing errors, the system helps administrators make informed decisions and ensures effective management of institutional resources.
+
+\section{Motivations}
+
+The motivation behind developing the Store Management System of BUBT is to overcome the limitations of traditional manual inventory management and create a modern, automated solution for institutional store operations. Manual processes often result in inaccurate stock records, time-consuming paperwork, delayed requisition approvals, and difficulties in tracking purchases, issued products, and damaged items. These challenges reduce operational efficiency and increase the possibility of human error.
+
+Educational institutions like universities require efficient inventory management systems to ensure that essential supplies are available when needed while avoiding unnecessary stock accumulation. The lack of automation in traditional systems creates delays in procurement processes and makes it difficult to track the lifecycle of inventory items from purchase to consumption or disposal.
+
+The rapid advancement of web technologies provides an opportunity to develop sophisticated yet user-friendly inventory management solutions. Modern frameworks like Laravel offer robust security features, efficient data handling capabilities, and flexible architecture that can be customized to meet specific institutional requirements. These technologies enable the development of systems that can be accessed remotely, reducing dependency on specific workstations and enabling flexibility in operations.
+
+Therefore, this system was designed to streamline all store-related activities through a centralized web-based platform. By integrating product management, purchase management, requisition processing, issue tracking, supplier management, reporting, and role-based access control, the system improves accuracy, transparency, and productivity while supporting effective inventory management and better decision-making within BUBT.
+
+The project also serves as a valuable learning opportunity for the development team, providing practical experience in software engineering, database design, web application development, and project management. These skills are essential for careers in software development and information technology.
+
+\section{Significance of the Project}
+
+The Store Management System of BUBT plays a significant role in improving the efficiency, accuracy, and transparency of inventory management within the university. The system replaces manual record-keeping with a centralized web-based platform that automates essential store operations, including product management, supplier management, purchasing, requisition processing, product issuance, damage tracking, and report generation.
+
+By maintaining real-time inventory records and implementing role-based access control, the system reduces human errors, enhances data security, and ensures accountability among users. The automated workflows eliminate manual data entry and reduce the time required for routine tasks, allowing staff to focus on more strategic activities.
+
+The system provides comprehensive reporting capabilities that enable management to make data-driven decisions. Real-time visibility into inventory levels, consumption patterns, and spending trends helps optimize resource allocation and budget planning. The PDF generation feature ensures that reports can be easily shared and archived for compliance and auditing purposes.
+
+Furthermore, its comprehensive reporting features support better planning and decision-making, while its scalable architecture allows future enhancements as institutional requirements grow. The use of modern, open-source technologies ensures that the system remains maintainable and can be extended with additional features as needed.
+
+Overall, the project contributes to effective resource management, increased productivity, and improved service delivery for both administrators and departmental users. The system demonstrates how technology can transform traditional administrative processes and serve as a model for digital transformation in other areas of the university.
+
+\section{Report Organization}
+
+This report is organized into several chapters that comprehensively describe the development of the Store Management System of BUBT:
+
+\begin{itemize}
+    \item \textbf{Chapter 1: Introduction} - Provides background information, problem statement, objectives, motivations, and significance of the project.
+
+    \item \textbf{Chapter 2: Background Study and Literature Review} - Presents a comprehensive review of existing systems and technologies, including related work in inventory management.
+
+    \item \textbf{Chapter 3: System Analysis and Design} - Details the system requirements, analysis, architecture, database design, and implementation methodology.
+
+    \item \textbf{Chapter 4: System Implementation and Testing} - Describes the implementation of various modules, user interface design, and testing strategies.
+
+    \item \textbf{Chapter 5: Conclusion and Future Work} - Summarizes the project achievements, limitations, and recommendations for future enhancements.
+\end{itemize}
+
+The report also includes front matter such as the title page, declaration, approval, dedication, acknowledgement, abstract, table of contents, list of figures, list of tables, and list of abbreviations. The back matter contains references and appendices if necessary.

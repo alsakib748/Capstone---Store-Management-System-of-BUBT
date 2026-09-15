@@ -1,0 +1,173 @@
+\chapter{APPENDIX}
+\label{appendix}
+
+\section{Appendix A: System Requirements Specification}
+
+\subsection{Hardware Requirements}
+
+\begin{enumerate}
+    \item \textbf{Server Requirements:}
+    \begin{itemize}
+        \item Processor: Quad-core 2.0 GHz or higher
+        \item RAM: 4 GB or higher
+        \item Storage: 50 GB or higher (SSD recommended)
+        \item Network: Stable internet connection
+    \end{itemize}
+
+    \item \textbf{Client Requirements:}
+    \begin{itemize}
+        \item Computer/Laptop/Tablet with web browser
+        \item Modern web browser (Chrome, Firefox, Edge, Safari)
+        \item Internet connectivity
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Software Requirements}
+
+\begin{enumerate}
+    \item \textbf{Server Software:}
+    \begin{itemize}
+        \item Operating System: Linux (Ubuntu 20.04+), Windows Server, or macOS
+        \item Web Server: Apache 2.4+ or Nginx 1.18+
+        \item PHP: Version 8.2 or higher
+        \item MySQL: Version 8.0 or higher
+        \item Composer: Latest version
+    \end{itemize}
+
+    \item \textbf{Client Software:}
+    \begin{itemize}
+        \item Web Browser: Latest versions of Chrome, Firefox, Edge, or Safari
+        \item Adobe Acrobat Reader (for viewing PDF reports)
+    \end{itemize}
+\end{enumerate}
+
+\section{Appendix B: User Roles and Permissions}
+
+\begin{longtable}{|p{2cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Role} & \textbf{Primary Functions} & \textbf{Access Level}\\
+\hline
+\endhead
+Super Admin & Full system access, user management, role assignment & All modules\\
+\hline
+Admin & Product, supplier, purchase, issue management, reporting & All except user management\\
+\hline
+Store Manager & Inventory operations, requisition processing & Selected modules\\
+\hline
+Assistant Manager & Requisition review and approval & Limited management\\
+\hline
+Department User & Create requisitions, view status & Requisition module only\\
+\hline
+Dean/HoD & View reports, approve high-value requisitions & Reports and approval\\
+\hline
+\end{longtable}
+
+\section{Appendix C: Database Schema Overview}
+
+The system uses the following major database tables:
+
+\begin{enumerate}
+    \item users - User authentication and profile information
+    \item departments - Academic and administrative departments
+    \item semesters - Academic semester definitions
+    \item brands - Product brand information
+    \item product\_categories - Product category classification
+    \item subcategories - Subcategory within categories
+    \item suppliers - Vendor/supplier information
+    \item products - Main inventory items
+    \item purchases - Purchase order records
+    \item purchase\_items - Items in purchase orders
+    \item return\_purchases - Returned purchase orders
+    \item requisitions - Requisition requests
+    \item requisition\_items - Items in requisitions
+    \item issues - Product issuance records
+    \item issue\_items - Items issued
+    \item damage\_products - Damaged product reports
+    \item damage\_product\_items - Damaged item details
+    \item quotations - Supplier quotations
+    \item quotation\_items - Quotation item details
+    \item permissions - System permissions
+    \item roles - User roles
+    \item model\_has\_roles - Role assignments
+    \item model\_has\_permissions - Permission assignments
+\end{enumerate}
+
+\section{Appendix D: Sample Screenshots}
+
+The following screenshots demonstrate key system interfaces:
+
+\begin{enumerate}
+    \item Login Page - Authentication entry point
+    \item Dashboard - Overview and statistics
+    \item Product Management - Product listing and CRUD operations
+    \item Purchase Management - Purchase order creation and tracking
+    \item Requisition Management - Requisition submission and approval
+    \item Report Generation - Report selection and export
+    \item Role Management - Role and permission configuration
+    \item Chat Interface - Real-time messaging
+\end{enumerate}
+
+\section{Appendix E: Project Timeline}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{2cm}|}
+\hline
+\textbf{Phase} & \textbf{Activity} & \textbf{Duration} & \textbf{Status}\\
+\hline
+1 & Requirement Analysis & 3 weeks & Completed\\
+\hline
+2 & System Design & 4 weeks & Completed\\
+\hline
+3 & Implementation & 8 weeks & Completed\\
+\hline
+4 & Testing & 3 weeks & Completed\\
+\hline
+5 & Deployment & 2 weeks & Completed\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Appendix F: Technology Stack Summary}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{2.5cm}|p{4cm}|}
+\hline
+\textbf{Category} & \textbf{Technology}\\
+\hline
+Backend & Laravel 12.0, PHP 8.2\\
+\hline
+Database & MySQL 8.0\\
+\hline
+Frontend & Tailwind CSS, Alpine.js, Blade Templates\\
+\hline
+Build Tool & Vite\\
+\hline
+Authentication & Laravel Breeze\\
+\hline
+Authorization & Spatie Permission\\
+\hline
+PDF Generation & Barryvdh Laravel DomPDF\\
+\hline
+Image Processing & Intervention Image\\
+\hline
+Real-time Chat & Chatify with Pusher\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Appendix G: Glossary}
+
+\begin{itemize}
+    \item \textbf{Inventory}: The goods, products, or materials held by an organization for use or sale
+    \item \textbf{Stock Keeping Unit (SKU)}: A unique identifier for each distinct product and service
+    \item \textbf{Requisition}: A formal request for products from a department
+    \item \textbf{Purchase Order}: A commercial document authorizing a purchase transaction
+    \item \textbf{Issue}: The act of releasing products from inventory
+    \item \textbf{Damage Product}: Products that are no longer usable due to damage
+    \item \textbf{Quotation}: A formal statement of expected price from a supplier
+    \item \textbf{Role-Based Access Control (RBAC)}: Access management based on user roles
+    \item \textbf{Eloquent ORM}: Laravel's object-relational mapper for database operations
+    \item \textbf{Blade Template}: Laravel's templating engine for views
+\end{itemize}
